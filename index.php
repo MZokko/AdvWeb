@@ -1,6 +1,8 @@
 <?php
 include('vendor/autoload.php');
 //include('autoloader.php');
+//navigation
+include('includes/navigation.inc.php');
 //generate product
 use aitsyd\Product;
 

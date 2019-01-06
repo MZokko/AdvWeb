@@ -21,6 +21,10 @@ class Navigation{
       case 0:
         $this -> pages = array(
           'home' => 'index.php',
+          'Gallery'=>'gallery.php',
+          'Services'=>'services.php',
+          'About Me'=>'aboutme.php',
+          'Online Booking'=>'onlinebooking.php',
           'sign in' => 'signin.php',
           'sign up' => 'signup.php'
         );
