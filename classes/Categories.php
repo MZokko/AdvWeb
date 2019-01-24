@@ -24,9 +24,11 @@ class Categories extends Database{
             return null;
         }
     }
+    
     public function getActive(){
         return($_GET['category'])? $_GET['category']:'';
     }
+    
 }
 
 ?>

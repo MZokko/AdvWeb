@@ -3,18 +3,11 @@ include('vendor/autoload.php');
 //include('autoloader.php');
 //navigation
 include('includes/navigation.inc.php');
-//generate product
-use aitsyd\Product;
 
-$product_class = new Product();
-$products = $product_class->getProducts();
-$page_title = 'shop Page';
-
-//generate categories
-use aitsyd\Categories;
-$category_class = new Categories();
-$categories = $category_class->getCategories();
-$active_category = $category_class->getActive();
+//generate home RTICLE
+use aitsyd\Articlehome;
+$articles= new Articlehome();
+$item = $articles->gethomearticle();
 
 
 $loader = new Twig_Loader_Filesystem('templates');
@@ -26,11 +19,9 @@ $twig = new Twig_Environment($loader, array(
 $template = $twig ->load('home.twig');
 echo $template -> render(array(
     'pages'=>$pages,
-    'products'=>$products,
     'pageTitle'=>$page_title,
     'currentPage'=>$currentPage,
-    'categories'=> $categories,
-    'activeCategory' => $active_category
+    'homearticle'=>$item
     ));
 
 ?>
