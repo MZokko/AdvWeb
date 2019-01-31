@@ -5,6 +5,9 @@ include('vendor/autoload.php');
 include('includes/navigation.inc.php');
 
 //generate About me
+use aitsyd\Aboutme;
+$aboutmearticle = new Aboutme();
+$item = $aboutmearticle->getaboutmearticle();
 
 $loader = new Twig_Loader_Filesystem('templates');
 

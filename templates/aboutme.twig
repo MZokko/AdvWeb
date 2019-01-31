@@ -5,7 +5,39 @@
         
         <div class="container">
             {% include 'includes/navigation.twig'%}
-            {% include 'includes/articleaboutme.twig'%}
+            {#{% include 'includes/articleaboutme.twig'%}#}
+            
+            {#article#}
+            
+            
+            {% for aboutme in aboutmearticle %}
+            <div class="card text-center">
+              
+              <div class="card-header" >
+                
+                {{aboutme.about_me_title}}
+                
+                
+              </div>
+              <div class="card-body">
+                  
+                  {# loop about me  #}
+                
+                <img src = "images/makeup/{{aboutme.about_me_img}}" >
+                <p class="text-center" style="padding-top:40px">
+                {{aboutme.about_me_description}}  
+                </p>
+                
+              </div>
+              
+              
+              <div class="card-footer text-muted">
+                Facebook Instagram mail
+              </div>
+            
+            </div>
+            {%endfor%}
+            
         </div>
     </body>
 </html>

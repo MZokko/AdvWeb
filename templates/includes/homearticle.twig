@@ -3,10 +3,10 @@
   {% for article in homearticle%}
 
   <div class="media" style="padding-top : 50px">
-    <img src="images/makeup/images.png" class="align-self-center mr-3" alt="...">
+    <img src="images/makeup/{{article.home_article_img}}" class="align-self-center mr-3" alt="...">
     <div class="media-body">
-        <h5 class="mt-0">{{article.home_article_title}}</h5>
-        <p>{{article.home_article_description}}</p>
+        <h5 class="text-center"  style="padding-top : 55px" >{{article.home_article_title}}</h5>
+        <p class="text-center" style="padding-top : 55px">{{article.home_article_description}}</p>
     </div>
   </div>
   {% endfor%}

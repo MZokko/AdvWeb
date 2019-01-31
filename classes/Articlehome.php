@@ -10,7 +10,8 @@ class Articlehome extends Database{
         $query = "SELECT
         home_article_id,
         home_article_title,
-        home_article_description
+        home_article_description,
+        home_article_img
         FROM home_article";
         
         //run the query
