@@ -25,8 +25,7 @@ class Navigation{
           'Services'=>'services.php',
           'About Me'=>'aboutme.php',
           'Online Booking'=>'onlinebooking.php',
-          'sign in' => 'signin.php',
-          'sign up' => 'signup.php'
+          'sign in' => 'signin.php'
         );
         break;
       case 1:
