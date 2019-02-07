@@ -71,17 +71,16 @@ class Account extends Database{
     //check if $user is an email
     if( filter_var( $user , FILTER_VALIDATE_EMAIL ) ){
       //user is using email address
-      $query = 'SELECT account_id,email,username,password 
+      $query = 'SELECT account_id, account_mail, account_username, account_password 
       FROM account 
-      WHERE email=? AND active=1';
+      WHERE account_mail=? AND account_active=1';
     }
     else{
       //user is using username
-      $query = 'SELECT account_id,email,username,password 
+      $query = 'SELECT account_id, account_mail, account_username, account_password 
       FROM account
-      WHERE username=? AND active=1';
+      WHERE account_username=? AND account_active=1';
     }
-
     $statement = $this -> connection -> prepare($query);
     $statement -> bind_param('s', $user );
     $statement -> execute();
@@ -97,10 +96,11 @@ class Account extends Database{
     }
     else{
       $row = $result -> fetch_assoc();
+      print_r($row);
       $account_id = $row['account_id'];
-      $email = $row['email'];
-      $username = $row['username'];
-      $hash = $row['password'];
+      $email = $row['account_mail'];
+      $username = $row['account_username'];
+      $hash = $row['account_password'];
       //check user's password against the hash
       if( password_verify($password,$hash) ){
         //password matches hash

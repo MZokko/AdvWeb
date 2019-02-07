@@ -11,7 +11,6 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
   //handle POST variables
   $username = $_POST['user'];
   $password = $_POST['password'];
-  
   //create instance of account class
   $account = new Account();
   $signin = $account -> signIn( $username, $password );
