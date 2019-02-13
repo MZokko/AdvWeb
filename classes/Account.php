@@ -1,5 +1,6 @@
 <?php
 namespace aitsyd;
+use aitsyd\Validator;
 class Account extends Database{
   public function __construct(){
     parent::__construct();
@@ -35,7 +36,7 @@ class Account extends Database{
     else{
       //no errors
       //add user to our database
-      $query = 'INSERT INTO account (email,password,username,created,updated,active)
+      $query = 'INSERT INTO account (account_mail,account_password,account_username,account_created,account_update,account_active)
       VALUES(?,?,?,NOW(), NOW(), 1)';
       //hash the password
       $hash = password_hash($password,PASSWORD_DEFAULT);

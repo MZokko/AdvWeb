@@ -9,7 +9,11 @@
             {% include 'includes/homecaroussel.twig'%}
             {% include 'includes/homearticle.twig'%}
             
-            {# form adding new article#}
+            {#if login then add form show#}
+            {%if user %}
+            {%include 'includes/homeArticleUpload.twig'%}
+            {%endif%}
+            
         </div>
     </body>
 </html>

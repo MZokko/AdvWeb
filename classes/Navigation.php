@@ -25,14 +25,17 @@ class Navigation{
           'Services'=>'services.php',
           'About Me'=>'aboutme.php',
           'Online Booking'=>'onlinebooking.php',
-          'sign in' => 'signin.php'
+          'sign in' => 'signin.php',
         );
         break;
       case 1:
         $this -> pages = array(
           'home' => 'index.php',
-          'account' => 'account.php',
-          'sign out' => 'signout.php'
+          'Gallery'=>'gallery.php',
+          'Services'=>'services.php',
+          'About Me'=>'aboutme.php',
+          'Online Booking'=>'onlinebooking.php',
+          'sign out'=>'signout.php'
         );
         break;
       case 2:
