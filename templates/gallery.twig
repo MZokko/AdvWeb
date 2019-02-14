@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+    {% include 'includes/head.twig' %}
+    
+<style>
+    .images {
+    display: grid;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    grid-column-gap: 2.083%;
+    grid-template-rows: auto;
+    grid-row-gap: 0.5em; }
+  .image:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3; }
+  .image:nth-child(6) {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 4; }
+ .image:nth-child(9) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 5; }
+  .image:nth-child(12) {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 6; }
+  .image:nth-child(15) {
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 6;
+    grid-row-end: 8; }
+  .image:nth-child(18) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 7;
+    grid-row-end: 9; }
+
+</style>
+    <body>
+        
+        <div class="container">
+            {% include 'includes/navigation.twig'%}
+            <div class="row">
+                <div class="images"> 
+               {% for images in gallery_images %} 
+               
+               
+            
+                   
+                   <img class="img-fluid image" src = "images/makeup/{{images.gallery_img}}" >
+                   
+               
+               
+               
+               
+               
+               
+               
+               {% endfor  %}
+                
+                
+                
+                </div>
+                
+                
+            </div>
+            
+            
+            
+            
+        </div>
+    </body>
+</html>
