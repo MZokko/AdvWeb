@@ -1,8 +1,8 @@
 <?php
 namespace aitsyd;
 class Database{
-    protected $connection;
-    protected function __construct(){
+    public $connection;
+    public function __construct(){
         try{
             $conn = mysqli_connect(
                 getEnv ('host'),

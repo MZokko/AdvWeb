@@ -3,7 +3,7 @@ include('vendor/autoload.php');
 //include('autoloader.php');
 //navigation
 include('includes/navigation.inc.php');
-print_r($_SESSION);
+include('includes/upload.php');
 
 //generate home RTICLE
 use aitsyd\Articlehome;
