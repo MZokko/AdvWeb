@@ -2,22 +2,22 @@
 
 <div class="card text-center">
   <div class="card-header">
-    Add a new article
+    Add a new service
   </div>
   <div class="card-body">
     <div class = "col-md-6 offset-md-3">
-        <form>
+        <form form method="post" action="services.php" enctype="multipart/form-data">
             
             <div class = "form-group">
             <label>service title</label>
-            <input class="form-control" type ="text" name = "serviceTitle" placeholder="Article title">
+            <input class="form-control" type ="text" name = "serviceTitle" placeholder="service title">
             </div>
             
             
             
             <div class = "form-group">
             <label>service Description</label>
-            <textarea class = "form-control" cols = "60"  placeholder = "service Description"></textarea>
+            <textarea class = "form-control" cols = "60"  name ="articleContent" placeholder = "service Description"></textarea>
             </div>
             
             

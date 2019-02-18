@@ -20,6 +20,9 @@
                 {%endfor%}
             
             {# form adding new article#}
+            {%if user%}
+                {% include 'includes/serviceArticleUpload.twig'%}
+            {%endif%}
         </div>
     </body>
 </html>

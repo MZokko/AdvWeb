@@ -3,10 +3,14 @@
   {% for article in homearticle%}
 
   <div class="media" style="padding-top : 50px">
-    <img src="images/makeup/{{article.home_article_img}}" class="align-self-center mr-3" alt="...">
-    <div class="media-body">
-        <h5 class="text-center"  style="padding-top : 55px" >{{article.home_article_title}}</h5>
-        <p class="text-center" style="padding-top : 55px">{{article.home_article_description}}</p>
+    <div class="row">
+      <div class="col-md-5">
+        <img class="img-fluid" src="images/makeup/{{article.home_article_img}}" class="align-self-center mr-3" alt="...">
+      </div>
+      <div class="col-md-7 media-body">
+        <h5 class="text-center"  >{{article.home_article_title}}</h5>
+        <p class="text-center mt-3">{{article.home_article_description}}</p>
+      </div>
     </div>
   </div>
   {% endfor%}

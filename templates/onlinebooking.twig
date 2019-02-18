@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    {% include 'includes/head.twig' %}
+    
+    <style>
+input[type=text], select, textarea {
+  width: 100%; 
+  padding: 12px;  
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical 
+}
+
+input[type=submit] {
+  background-color: pink;
+  color: white;
+  padding: 12px 20px;
+  position : center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+  background-color: pink;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+    </style>
+
+<body>
+<div class="container">
+   {% include 'includes/navigation.twig'%}
+  <div class="container">
+  <form action="action_page.php">
+
+    <label for="fname">First Name :</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name : </label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="email">Email : </label>
+    <input type="text" id="email" name="email" placeholder="Your email address..">
+    
+     <label for="phone">Phone : </label>
+    <input type="text" id="phone" name="phone" placeholder="Your phone number..">
+    
+    <label for="Date "> Date Required : </label>
+    <input type="text" id="date" name="date" placeholder="(DD/MM/YY)">
+    
+    <label for="country">City</label>
+    <select id="country" name="country">
+      <option value="Sydney">Sydney</option>
+      <option value="Melbourne">Melbourne</option>
+      <option value="Brisbane">Brisbane</option>
+    </select>
+    
+    <label for="service">Service</label>
+    <select id="service" name="service">
+      <option value="glamour">Glamour Make-Up - 120$</option>
+      <option value="weddingT">Wedding Trial - 120$</option>
+      <option value="weddingM">Wedding Make-Up - 200$</option>
+      <option value="MakeupC">Make-Up Classes - 100$</option>
+      <option value="hair">Hair Styling - 80$</option>
+    </select>
+
+  <label for="Number of clients">Number of clients</label>
+    <select id="numberC" name="numberC">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      
+    </select>
+
+
+    <label for="subject">Message</label>
+    <textarea id="Message" name="msg" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+    </body>
+</html>

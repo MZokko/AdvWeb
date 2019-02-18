@@ -5,7 +5,7 @@ $db = new Database();
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
     
-    $target_articleTitle = $_POST['articleTitle'];
+    $target_articleTitle = $_POST['serviceTitle'];
     $target_articleDesc = $_POST['articleContent'];
     $target_dir = "images/makeup";
     $errors = array();
@@ -69,11 +69,11 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
         }
         else{
             //insert file in database (title description fileName)
-            $query = "INSERT INTO home_article(home_article_img, home_article_title, home_article_description, home_article_date_added, home_article_active) 
+            $query = "INSERT INTO `services`( `services_title`, `services_description`, `services_img`, `services_date_added`, `services_active`) 
             VALUES (?,?,?,now(),1)";
             $connection = $db->connection;
             $statement = $connection->prepare($query);
-            $statement->bind_param('sss', $fileNewName,$target_articleTitle,$target_articleDesc);
+            $statement->bind_param('sss', $target_articleTitle,$target_articleDesc,$fileNewName);
             $statement->execute();
             
             
@@ -83,4 +83,5 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     
 }
 
+?>
 ?>

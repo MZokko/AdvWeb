@@ -1,6 +1,6 @@
 
 
-<div class="card text-center">
+<div class="card text-center mt-4">
   <div class="card-header">
     Add a new article
   </div>
@@ -22,8 +22,9 @@
             
             
             <div class = "form-group">
-                <label for="file-upload" class="btn btn-secondary">Upload File</label>
-                <input type ="file" id = "file-upload" name = "file" class = "d-none">
+                <label for="file-upload" class="btn btn-secondary">Select Image For Upload</label>
+                <input type ="file" id="file-upload" name = "file" class = "d-none">
+                <div class="image-preview d-flex flex-column justify-content-center align-items-center"></div>
             </div>
             
             <div class = "form-group">
@@ -36,3 +37,28 @@
      Add a new article
   </div>
 </div>
+
+<script>
+  //script to show image being uploaded
+  $(document).ready( () => {
+    const fileUpload = $('#file-upload');
+    $(fileUpload).on('change', (changeEvt) => {
+      //get a handle of the file being uploaded
+      let newfile = event.target.files[0];
+      //get size in kilobytes and add 'K'
+      let filesize = (newfile.size/1000) + 'K';
+      //get the first five letters of file name and add '...'
+      let name = newfile.name.substr(0,10) + '...';
+      let reader = new FileReader();
+      reader.addEventListener('load', (loadEvt) => {
+        let dataURI = reader.result;
+        let template = `<img src="${dataURI}" class="img-fluid rounded d-block" style="max-width:120px;">
+        <p class="image-name">${name} </p>
+        <p class="image-size">${filesize}</p>`;
+        //append to image preview
+        $('.image-preview').append(template);
+      });
+      reader.readAsDataURL(newfile);
+    });
+  });
+</script>
