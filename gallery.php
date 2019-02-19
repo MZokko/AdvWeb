@@ -3,6 +3,7 @@ include('vendor/autoload.php');
 //include('autoloader.php');
 //navigation
 include('includes/navigation.inc.php');
+include('includes/uploadGallery.php');
 //generate gallery
 use aitsyd\Gallery;
 $gallery = new Gallery();
@@ -17,6 +18,7 @@ $twig = new Twig_Environment($loader, array(
 $template = $twig ->load('gallery.twig');
 
 echo $template -> render(array(
+    'user'=> $user,
     'pages'=>$pages,
     'pageTitle'=>$page_title,
     'currentPage'=>$currentPage,

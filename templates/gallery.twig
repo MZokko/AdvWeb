@@ -17,30 +17,18 @@
         
         <div class="container">
             {% include 'includes/navigation.twig'%}
+            
             <div class="row">
                 <div class="images"> 
                {% for images in gallery_images %} 
-               
-               
-            
-                   
                    <img class="img-fluid image" src = "images/makeup/{{images.gallery_img}}" >
-                   
-               
-               
-               
-               
-               
-               
-               
                {% endfor  %}
-                
-                
-                
                 </div>
-                
-                
             </div>
+            
+            {% if user %}
+                {% include 'includes/galleryUpload.twig'%}
+            {%endif%}
             
             
             
